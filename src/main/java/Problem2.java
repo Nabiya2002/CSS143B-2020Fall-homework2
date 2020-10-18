@@ -14,6 +14,10 @@ public class Problem2 {
     // Do not use extra space for another array. Solution to be in-pace with O(1) extra memory
     public static int remove(int[] nums) {
 
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+
         int j = 0;
 
         for (int i = 1; i < nums.length; i++) {

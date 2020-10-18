@@ -1,17 +1,23 @@
+/**
+ * This class defines romance books and calculates the late fee specific to romance books.
+ *
+ * Author: Nabiya Alam
+ * Version: 1.0.0
+ * Date: 10/17/2020
+ */
 package Problem3;
 
 public class BookRomance extends Book {
 
-    private int lateFeePerDayInDollar = 4;
+    private final int lateFeePerDayInDollar = 4;
+
 
     public BookRomance(String title, String author) {
-        // homework
-        // tip: use the 'super' keyword
+        super(title, author);
     }
 
     public BookRomance(BookRomance anotherBook) {
-        // homework
-        // tip: use the 'super' keyword
+        super(anotherBook);
     }
 
     @Override
@@ -19,8 +25,12 @@ public class BookRomance extends Book {
         return lateFeePerDayInDollar;
     }
 
+    // returns the fees based on the numbers of days past due date and the fee
     @Override
     public int calcLateFees(int numOfDaysPastDue) {
-        // homework
+        if (numOfDaysPastDue <= 0) {
+            return 0;
+        }
+        return lateFeePerDayInDollar * numOfDaysPastDue;
     }
 }
